@@ -14,13 +14,32 @@ loginButton.addEventListener("click", () => {
 
     let userData = JSON.parse(localStorage.getItem("users")) || [];
 
+    let account = false
     for (let i = 0; i < userData.length; i++) {
+
         let user = userData[i];
-        if (userData[i].mobileEmail === emailInput.value && userData[i].password === passwordInput.value) {
-            window.location.href = "../Dashboard/dashboard.html";
+
+        if (user?.mobileEmail === emailInput.value) {
+
+            account = true
+
+            if (user?.password === passwordInput.value) {
+
+                alert("login successful!");
+
+                localStorage.setItem("LoginUser", JSON.stringify(userData))
+
+                window.location.href = "../Dashboard/dashboard.html";
+
+            }
+
+        } else {
+
+            alert("Login Error", "Please enter correct password!");
+
         }
+        break;
     }
-    localStorage.setItem("LoginUser", JSON.stringify(userData))
 })
 
 createAccountButton.addEventListener("click", () => {
