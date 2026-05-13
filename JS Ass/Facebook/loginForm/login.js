@@ -22,3 +22,7 @@ loginButton.addEventListener("click", () => {
     }
     localStorage.setItem("LoginUser", JSON.stringify(userData))
 })
+
+createAccountButton.addEventListener("click", () => {
+    window.location.href = "../sign up/signup.html";
+})

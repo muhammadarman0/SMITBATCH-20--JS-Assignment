@@ -65,3 +65,8 @@ function signupHanlder(e) {
         window.location.href = "../loginForm/login.html";
     });
 }
+
+let readyHandler = document.getElementById("readyHandler");
+readyHandler.addEventListener("click", () => {
+    window.location.href = "../loginForm/login.html";
+})
