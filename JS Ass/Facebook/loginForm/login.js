@@ -13,6 +13,7 @@ loginButton.addEventListener("click", () => {
     }
 
     let userData = JSON.parse(localStorage.getItem("users")) || [];
+    console.log(userData);
 
     let account = false
     for (let i = 0; i < userData.length; i++) {
@@ -38,10 +39,10 @@ loginButton.addEventListener("click", () => {
             alert("Login Error", "Please enter correct password!");
 
         }
-        break;
     }
 })
 
 createAccountButton.addEventListener("click", () => {
     window.location.href = "../sign up/signup.html";
 })
+
