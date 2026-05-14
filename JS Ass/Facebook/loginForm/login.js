@@ -1,48 +1,46 @@
+let emailInput = document.getElementById("email")
 
-let emailInput = document.getElementById("email");
 let passwordInput = document.getElementById("password");
-let loginButton = document.getElementById("loginDashboard");
-let createAccountButton = document.getElementById("createAccount");
 
+function loginHandler(e) {
+    e.preventDefault();
 
-loginButton.addEventListener("click", () => {
+    let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
     if (emailInput.value.trim() === "" || passwordInput.value.trim() === "") {
         alert("Please fill in all the fields.");
-        return
-    }
 
-    let userData = JSON.parse(localStorage.getItem("users")) || [];
-    console.log(userData);
+    } else if (!regex.test(emailInput.value)) {
+        alert("Please enter a valid email address.");
+    } else {
+        let gateLoginUser = JSON.parse(localStorage.getItem("users")) || [];
+        let flag = false;
+        for (let i = 0; i < gateLoginUser.length; i++) {
+            let user = gateLoginUser[i]
+            if (user.mobileEmail === emailInput.value) {
 
-    let account = false
-    for (let i = 0; i < userData.length; i++) {
+                flag = true;
+                if (user.password === passwordInput.value) {
+                    let LoginUserID = localStorage.setItem("LoginUser", JSON.stringify(user))
 
-        let user = userData[i];
-
-        if (user?.mobileEmail === emailInput.value) {
-
-            account = true
-
-            if (user?.password === passwordInput.value) {
-
-                alert("login successful!");
-
-                localStorage.setItem("LoginUser", JSON.stringify(userData))
-
-                window.location.href = "../Dashboard/dashboard.html";
-
+                    Swal.fire({
+                        title: 'Login successful!',
+                        text: 'You will be redirected to the dashboard.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        window.location.href = "../Dashboard/dashboard.html";
+                    });
+                }
             }
-
-        } else {
-
-            alert("Login Error", "Please enter correct password!");
-
         }
     }
-})
 
-createAccountButton.addEventListener("click", () => {
+    emailInput.value = "";
+    passwordInput.value = ""
+
+}
+
+let createAccount = document.getElementById("createAccount").addEventListener("click", () => {
     window.location.href = "../sign up/signup.html";
 })
-

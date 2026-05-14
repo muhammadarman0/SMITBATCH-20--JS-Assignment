@@ -53,7 +53,7 @@ function signupHanlder(e) {
         mobileEmail: mobileEmailInput.value,
         password: passwordInput.value
     }
-    let dataSave = JSON.parse(localStorage.getItem("users")) || [];
+    let dataSave = JSON.parse(localStorage.getItem("users"));
     dataSave.push(objArr);
     localStorage.setItem("users", JSON.stringify(dataSave))
 
@@ -65,6 +65,11 @@ function signupHanlder(e) {
         window.location.href = "../loginForm/login.html";
     });
 }
+
+firstNameInput.value = "";
+lastNameInput.value = "";
+mobileEmailInput.value = "";
+passwordInput.value = ""
 
 let readyHandler = document.getElementById("readyHandler");
 readyHandler.addEventListener("click", () => {
