@@ -17,10 +17,14 @@ function loginHandler(e) {
         let flag = false;
         for (let i = 0; i < gateLoginUser.length; i++) {
             let user = gateLoginUser[i]
+            console.log(user);
+            
             if (user.mobileEmail === emailInput.value) {
 
                 flag = true;
+
                 if (user.password === passwordInput.value) {
+
                     let LoginUserID = localStorage.setItem("LoginUser", JSON.stringify(user))
 
                     Swal.fire({
@@ -41,6 +45,7 @@ function loginHandler(e) {
 
 }
 
-let createAccount = document.getElementById("createAccount").addEventListener("click", () => {
+let createAccount = document.getElementById("createAccount")
+createAccount.addEventListener("click", () => {
     window.location.href = "../sign up/signup.html";
 })
