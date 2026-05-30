@@ -29,8 +29,8 @@ function load() {
     username.innerText = item.name
     img.src = item.img
     desc.innerText = item.desc
+    console.log(item)
 }
-
 let rightBtn = document.getElementById("right-arrow")
 
 let leftBtn = document.getElementById("left-arrow")
