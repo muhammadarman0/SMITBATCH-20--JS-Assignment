@@ -1,5 +1,5 @@
 *{
-    margin:10px;
+    margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -7,8 +7,9 @@
 
 body{
     min-height:100vh;
-    display:flex;
+    display:block;
     justify-content:center;
+    gap: 30px;
     align-items:center;
     padding:20px;
     background:linear-gradient(
@@ -37,6 +38,7 @@ body{
 .container{
     width:100%;
     max-width:700px;
+    display: block;
     background:rgba(255,255,255,0.12);
     backdrop-filter:blur(15px);
     border:1px solid rgba(255,255,255,0.2);
@@ -232,7 +234,7 @@ body{
 }
 
 .hidden{
-    
+    /* display: none; */
 }
 .card-header h2{
     font-size:24px;
@@ -284,6 +286,22 @@ body{
     font-weight:600;
 }
 
+.btn-ant{
+        margin-top:10px;
+    border:none;
+    border-radius:12px;
+    padding:15px;
+    font-size:17px;
+    font-weight:700;
+    color:#fff;
+    cursor:pointer;
+    background:linear-gradient(
+        135deg,
+        #06b6d4,
+        #2563eb
+    );
+    transition:0.4s;
+}
 /* Responsive */
 
 @media(max-width:480px){
