@@ -10,7 +10,7 @@ let pendingTask = 0;
 
 function addtask() {
 
-    console.log(taskInput.value)
+    // console.log(taskInput.value)
 
 
     if (taskInput.value.trim() == "") {
@@ -29,7 +29,6 @@ function addtask() {
                     <button class="delete-btn" onclick="deletetask(this)">🗑️</button>
                 </div>
             </li>
-
 `
     taskInput.value = "";
     pendingTask++;
@@ -61,7 +60,7 @@ function clearCompleted(e) {
     if (todolist.children.length == 0) {
         alert("No task to clear")
     }
-    
+
     for (let i = 0; i < todolist.children.length; i++) {
         let task = todolist.children[i];
         task.remove();
@@ -69,5 +68,5 @@ function clearCompleted(e) {
     }
     pendingTask = 0;
     counter.innerText = pendingTask;
-    
+
 }
