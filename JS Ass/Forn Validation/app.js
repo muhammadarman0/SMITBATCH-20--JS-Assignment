@@ -12,6 +12,10 @@ function error(m) {
     });
 }
 
+let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{3,}$/;
+
+// let passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{12,}$/
+
 function submitHandler(e) {
     e.preventDefault()
     console.log("ma chala");
@@ -31,6 +35,12 @@ function submitHandler(e) {
         console.log(email.value.trim());
 
     }
+
+    if (!emailRegex.test(email.value.trim())) {
+        error("Please enter a valid email")
+        return;
+    }
+
     if (pass.value.trim() === "") {
         error("Fill Enter a Password")
         return;
@@ -39,15 +49,24 @@ function submitHandler(e) {
 
     }
 
-    if (pass.value.length < 8 || pass.value.length > 12) {
+    if (pass.value.length < 8 || pass.value.length > 18) {
         error("Password length must be 8")
         return;
     }
 
     if (pass.value != confirmPassword.value) {
         error("Please enter a Same password")
+        return
     }
-    setTimeout(() => {
+
+    // if (!passRegex.test(pass.value.trim())) {
+    //     error("Please enter a strong password")
+    //     return;
+    // }
+
+
+
+    setInterval(() => {
         window.location.href = "https://www.instagram.com/fullstack_developer2/"
     }, 3000)
 
@@ -58,3 +77,7 @@ function submitHandler(e) {
     confirmPassword.value = ""
 
 }
+
+//  true ye osko false karde tha ha
+ 
+// aur jo false hoti ha osko true karde tha ha

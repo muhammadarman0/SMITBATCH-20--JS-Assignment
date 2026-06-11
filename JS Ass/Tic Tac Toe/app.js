@@ -71,7 +71,6 @@ const checkWin = () => {
             if (pos1 === pos2 && pos2 === pos3) {
                 // console.log(pos1 + " is winner");
                 poseWinner(pos1)
-                // resetGame(
             }
         }
     }
