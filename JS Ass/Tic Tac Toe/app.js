@@ -26,6 +26,7 @@ let winpattren = [
     [2, 4, 6],
 
 ];
+// console.log(winpattren[3]);
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
