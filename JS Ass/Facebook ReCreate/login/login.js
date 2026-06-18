@@ -30,20 +30,27 @@ const loginUser = () => {
     let SignUpUser = JSON.parse(localStorage.getItem("SignUpUsers")) || []
 
     console.log(SignUpUser[0].Useremail);
-    
+
     let CurrentUser = false
 
     for (let i = 0; i < SignUpUser.length; i++) {
-       let user = SignUpUser[i]
+        let user = SignUpUser[i]
 
-       if(user?.Useremail === Useremail.value){
-        CurrentUser = true
-        if(user?.UserPass = Userpassword.value){
-    sweety("success","User login successfully")
+        if (user?.Useremail === Useremail.value) {
+            CurrentUser = true
+            if (user?.UserPass === Userpassword.value) {
+                sweety("success", "User login successfully")
+
+                setInterval(() => {
+                    window.location.href = "../Dashboard/dashboard.html"
+                }, 2000)
+            }
         }
-       }
 
     }
+
+    Useremail.value = ""
+    Userpassword.value = ""
     // let itExistUser = false
     // if (SignUpUser.Useremail === Useremail.value) {
     //     itExistUser = true
@@ -56,5 +63,23 @@ const loginUser = () => {
 
 }
 
+let toggle = document.getElementById("toggle")
+
+const Showpass = () => {
+
+    if (Userpassword.type === "password") {
+        Userpassword.type = "text"
+        toggle.className = `fa-solid fa-eye`
+        return
+    }
+
+    if (Userpassword.type === "text") {
+        Userpassword.type = "password"
+        toggle.className = `fa-solid fa-eye-slash`
+        return
+    }
+}
 
 loginBtn.addEventListener("click", loginUser)
+
+toggle.addEventListener("click", Showpass)
