@@ -1,3 +1,4 @@
+
 let Useremail = document.getElementById("email");
 let Userpassword = document.getElementById("password")
 
@@ -44,11 +45,12 @@ const loginUser = () => {
                 setInterval(() => {
                     window.location.href = "../Dashboard/dashboard.html"
                 }, 2000)
+                localStorage.setItem("CurrentUser", JSON.stringify(user))
             }
         }
 
     }
-
+    
     Useremail.value = ""
     Userpassword.value = ""
     // let itExistUser = false
