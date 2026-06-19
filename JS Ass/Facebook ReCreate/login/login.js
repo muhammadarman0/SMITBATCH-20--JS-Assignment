@@ -46,11 +46,11 @@ const loginUser = () => {
                     window.location.href = "../Dashboard/dashboard.html"
                 }, 2000)
                 localStorage.setItem("CurrentUser", JSON.stringify(user))
-            }
+            } 
         }
 
     }
-    
+
     Useremail.value = ""
     Userpassword.value = ""
     // let itExistUser = false

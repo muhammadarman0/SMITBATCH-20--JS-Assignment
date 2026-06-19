@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="dashboard.css">
 </head>
-<body>
-    <h1>Facebook Dashboard</h1>
 
-    <button id="logOut">Log out</button>
+<body>
+
+    <nav id="navbar">
+
+        <div id="left">
+            <div id="logo">f</div>
+
+            <div id="search">
+                <input type="text" placeholder="Search Facebook">
+            </div>
+        </div>
+
+        <div id="center">
+            <i class="fa-solid fa-house active"></i>
+            <i class="fa-solid fa-clapperboard"></i>
+            <i class="fa-solid fa-money-bill-trend-up"></i>
+            <i class="fa-solid fa-shop"></i>
+            <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div id="right">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-brands fa-facebook-messenger"></i>
+            <i class="fa-solid fa-bell"></i>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/40" alt="profile" id="profile">
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+
+    </nav>
 
     <script src="dashboard.js"></script>
     <script src="../authentication/scirpt.js"></script>
 </body>
+
 </html>
