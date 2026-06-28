@@ -232,35 +232,35 @@
 // console.log(findEven);
 
 // Students me first failed student find karo.
-let stdResult = [
-    {
-        name: "Arman",
-        age: 19,
-        marks: 87
-    },
-    {
-        name: "Adnan",
-        age: 16,
-        marks: 57
-    },
-    {
-        name: "Ashas",
-        age: 21,
-        marks: 97
-    },
-    {
-        name: "Areeb",
-        age: 20,
-        marks: 27
-    }
-]
+// let stdResult = [
+//     {
+//         name: "Arman",
+//         age: 19,
+//         marks: 87
+//     },
+//     {
+//         name: "Adnan",
+//         age: 16,
+//         marks: 57
+//     },
+//     {
+//         name: "Ashas",
+//         age: 21,
+//         marks: 97
+//     },
+//     {
+//         name: "Areeb",
+//         age: 20,
+//         marks: 27
+//     }
+// ]
 
-let falied = stdResult.find((f) => {
-    if(f.marks <= 50){
-        return f
-    }
-})
-console.log(falied);
+// let falied = stdResult.find((f) => {
+//     if(f.marks <= 50){
+//         return f
+//     }
+// })
+// console.log(falied);
 
 //     reduce()
 // [1, 2, 3, 4] ka sum reduce() se nikalo.
