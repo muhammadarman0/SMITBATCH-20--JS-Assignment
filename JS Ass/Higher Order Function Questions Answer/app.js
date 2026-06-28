@@ -172,11 +172,21 @@
 // let print = userName.forEach((p) => {
 //     let upper = p.toUpperCase()
 //     console.log(upper);
-    
+
 // })
 
 //     find()
 // [10, 20, 30, 40] me se first number greater than 25 find karo.
+
+// let onlyOne = [10, 20, 30, 40]
+// let print = onlyOne.find((f) => {
+//     if (f > 25) {
+//         return f
+
+//     }
+// })
+// console.log(print);
+
 // Users array me "Ali" naam ka user find karo.
 // Ek products array me first expensive product find karo.
 // Ek array me first even number find karo.
