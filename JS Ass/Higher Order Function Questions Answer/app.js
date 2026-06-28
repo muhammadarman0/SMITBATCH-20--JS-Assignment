@@ -188,8 +188,49 @@
 // console.log(print);
 
 // Users array me "Ali" naam ka user find karo.
+
+// let userArr = ["Arman", "Ali", "Ahmed","Ali"]
+
+// let print = userArr.find((f) => {
+//     if(f === "Ali"){
+//         return f
+
+//     }
+// })
+// console.log(print);
+
 // Ek products array me first expensive product find karo.
+
+// let productArr = [{
+//     Deal: "Basic",
+//     Item: "Shose",
+//     Price: 2300
+// }, {
+//     Deal: "Normal",
+//     Item: "Shose",
+//     Price: 4300
+// }, {
+//     Deal: "Expensive",
+//     Item: "Shose",
+//     Price: 21000
+// }]
+// let findExp = productArr.find((f) => {
+//     if (f.Deal === "Expensive") {
+//         return f
+//     }
+// })
+// console.log(findExp);
+
 // Ek array me first even number find karo.
+// let arr = [, 5, 3, 7, 9, 4, 0]
+
+// let findEven = arr.find((f) => {
+//     if(f %2 === 0){
+//         return f
+//     }
+// })
+// console.log(findEven);
+
 // Students me first failed student find karo.
 //     reduce()
 // [1, 2, 3, 4] ka sum reduce() se nikalo.
