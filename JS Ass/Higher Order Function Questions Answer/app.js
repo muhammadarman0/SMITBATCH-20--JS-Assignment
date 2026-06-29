@@ -399,11 +399,47 @@
 
 
 // Object ke andar function ka example do.
+// let objFn = {
+//     name: function () {
+// console.log("Ha bhi uncle kase ho");
+
+//     }
+// }
+// console.log(objFn.name);
+
+
 // this keyword object me kya karta hai ?
+
+//  this keyword direction bata ha khe ye kispe use hoga 
+
+// 
 //     Object keys kaise nikalte hain ?
+
+// object khi key dot se nikalte hain 
+
 //         Object values kaise nikalte hain ?
+
+// object kha naam dot aur key name sa 
+
 //             Nested Objects
 // Ek object ke andar object ka example banao.
+
+// let nestedObj = {
+//     user1:
+//     {
+//         name: "Arman",
+//         age: 19,
+//         jod: "fronted Developer"
+//     },
+//     user2: {
+//         name: "Ahmed",
+//         age: 16,
+//         job: "Agentic AI"
+//     }
+// }
+
+// console.log(nestedObj);
+
 // User object ke andar address object create karo.
 // Nested object ki city access karo.
 // Student object me marks object add karo.
