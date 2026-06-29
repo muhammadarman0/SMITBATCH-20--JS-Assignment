@@ -441,6 +441,16 @@
 // console.log(nestedObj);
 
 // User object ke andar address object create karo.
+let user = {
+    name: "Arman",
+    age: 18,
+    address: {
+        city: "karachi",
+        homeAdd: "Krongi no 6"
+    }
+}
+console.log(user);
+
 // Nested object ki city access karo.
 // Student object me marks object add karo.
 // Company object me employee object create karo.
