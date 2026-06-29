@@ -279,7 +279,21 @@
 
 
 // Numbers array ka maximum value find karo using reduce().
+
+// let numArr = [32,11,45]
+
+// let valueRed = numArr.reduce((large,current) => large > current ? large : current)
+
+// console.log(valueRed);
+
 // Ek words array ko single sentence me convert karo.
+
+// let arr = ["I","am","Arman"]
+
+// let print = arr.forEach((sentence) => {
+//     console.log(arr.join(" ").toString());
+// })
+
 // Shopping cart ka total bill calculate karo.
 //     findLastIndex()
 // [1, 2, 3, 2, 4, 2] me last 2 ka index find karo.
