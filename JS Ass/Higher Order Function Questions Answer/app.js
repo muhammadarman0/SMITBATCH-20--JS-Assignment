@@ -479,14 +479,259 @@
 
 
 // Company object me employee object create karo.
+
+// let company = {
+//     name: "Tech Solution",
+//     founder: "Muhammad Arman",
+//     age: 19,
+//     location: {
+//         city: "karachi",
+//         country: "Pakistan"
+//     }
+// }
+
+// company.employes = 120
+
+// console.log(company);
+
 // Array of Objects
 // Array of objects kya hota hai ?
+
+// Array khe ander object create karna 
+
+// Example
+
+// let arrObj = [
+//     {
+//         name:"Salman",
+//         salary: 24000,
+//     },{
+//         name:"Ahmed",
+//         salary: 35000
+//     }
+// ]
+// console.log(arrObj);
+
+
 //     Students ka array banao jisme har student ka name aur marks ho.
+
+// let stdArrObj = [
+//     {
+//         name: "Kamil",
+//         age: 19,
+//         marks: {
+//             english: 88,
+//             urdu: 66,
+//             math: 98
+//         }
+//     },
+//     {
+//         name: "Ahmed",
+//         age: 18,
+//         marks: {
+//             english: 92,
+//             urdu: 87,
+//             math: 80
+//         }
+//     },
+//     {
+//         name: "Samad",
+//         age: 18,
+//         marks: {
+//             english: 67,
+//             urdu: 83,
+//             math: 80
+//         }
+//     }
+// ]
+
+// let print = stdArrObj.forEach((sumMarks) => {
+//     console.log(sumMarks.name,sumMarks.marks.english + sumMarks.marks.urdu +sumMarks.marks.math);
+
+// })
 // Array of objects me se sirf names print karo.
+
+// let arrobj = [
+//     {
+//         name: "Arman",
+//         gender: "male",
+//         age: 19
+//     },
+//     {
+//         name:"ahmed",
+//         gender: "male",
+//         age: 18
+//     }
+// ]
+// console.log("Before",arrobj);
+
+// let print = arrobj.map((naam)=>{
+//     return naam.name
+// })
+// console.log("After",print);
+
 // Passed students filter karo from array of objects.
+// let arrObjPass = [
+//     {
+//         name: "Arman",
+//         age: 19,
+//         marks: {
+//             math: 88,
+//             english: 90,
+//             urdu: 68
+//         }
+//     },
+//     {
+//         name: "Ahmed",
+//         age: 18,
+//         marks: {
+//             math: 89,
+//             english: 93,
+//             urdu: 44
+//         }
+//     },
+//     {
+//         name: "Areeb",
+//         age: 21,
+//         marks: {
+//             math: 24,
+//             english: 56,
+//             urdu: 11
+//         }
+//     },
+//     {
+//         name: "Samad",
+//         age: 18,
+//         marks: {
+//             math: 57,
+//             english: 45,
+//             urdu: 23
+//         }
+//     }
+// ]
+
+// let print = arrObjPass.filter((passStd) => {
+//     let sumMarks = passStd.marks.math + passStd.marks.english + passStd.marks.urdu;
+
+//     if(sumMarks > 110){
+//         return passStd
+//     }
+// })
+// console.log(print);
+
 //     map() use karke students names uppercase me convert karo.
+
+// let std = [ 
+//     {
+//         name: "arman"
+//     },
+//     {
+//         name: "ahmed"
+//     },
+//     {
+//         name: "samad"
+//     }
+// ]
+// let print = std.map((n) => n.name.toUpperCase())
+// console.log(print);
+
 // Highest marks wala student find karo.
+
+// let higest = [
+//     {
+//         name: "arman",
+//         mark: 210
+//     },
+//     {
+//         name: "ahmed",
+//         mark: 250
+//     },
+//     {
+//         name: "absar",
+//         mark: 150
+//     }
+// ]
+
+// let print = higest.map((p) => p.mark > 210)
+
+// console.log(print);
+
 // Ek products array me total stock calculate karo.
+
+// let product = [
+//     {
+//         product: "shose",
+//         stock: 230
+//     },
+//     {
+//         product: "socks",
+//         stock: 130
+//     }
+// ]
+// let print = product.map((sum)=> sum.stock + sum.stock)
+// console.log(print);
+
 // Array of objects me new object push karo.
+// let product = [
+//     {
+//         product: "shose",
+//         stock: 230
+//     },
+//     {
+//         product: "socks",
+//         stock: 130
+//     }
+// ]
+
+// product.push = {
+//     product: "kuch bhi"
+// }
+// console.log(product);
+
 // User object ko array me find karo.
+
+// let users = [
+//     {
+//         id: 1,
+//         name: "Ali",
+//         age: 20
+//     },
+//     {
+//         id: 2,
+//         name: "Ahmed",
+//         age: 22
+//     },
+//     {
+//         id: 3,
+//         name: "Sara",
+//         age: 19
+//     }
+// ];
+
+// let print = users.find((one) => one.id === 2)
+// console.log(print);
+
 // Array of objects ko loop se print karo.
+
+// let users = [
+//     {
+//         id: 1,
+//         name: "Ali",
+//         age: 20
+//     },
+//     {
+//         id: 2,
+//         name: "Ahmed",
+//         age: 22
+//     },
+//     {
+//         id: 3,
+//         name: "Sara",
+//         age: 19
+//     }
+// ];
+
+// let print = users.forEach((p)=>{
+//     console.log(p);
+    
+// })
