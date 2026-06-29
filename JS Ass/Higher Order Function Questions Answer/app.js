@@ -317,6 +317,11 @@
 // console.log(print);
 
 // Last even number ka index find karo.
+
+// let even = [2,4,6,8,0]
+// let print = even.findLast((p) => p %2 === 0)
+// console.log(print);
+
 // Ek names array me last "Ali" ka index find karo.
 // Ek products array me last expensive product ka index nikalo.
 // Array me last negative number ka index find karo.
