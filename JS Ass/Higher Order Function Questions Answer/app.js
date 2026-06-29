@@ -323,6 +323,17 @@
 // console.log(print);
 
 // Ek names array me last "Ali" ka index find karo.
+
+// let std = ["Arham","Ahmed","Ali"]
+
+// let print = std.findLast((p,index) => {
+//     if(p === "Ali"){
+//         return `${index} ${p} `
+//     }
+// })
+
+// console.log(print);
+
 // Ek products array me last expensive product ka index nikalo.
 // Array me last negative number ka index find karo.
 //     Objects
