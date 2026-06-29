@@ -464,6 +464,20 @@
 // console.log(nest.city.city);
 
 // Student object me marks object add karo.
+// let std = {
+//     name: "Arman",
+//     age: 18
+// }
+// console.log("before",std);
+
+// std.marks = {
+//     maths: 89,
+//     urdu: 65,
+//     english: 84
+// }
+// console.log("after",std);
+
+
 // Company object me employee object create karo.
 // Array of Objects
 // Array of objects kya hota hai ?
