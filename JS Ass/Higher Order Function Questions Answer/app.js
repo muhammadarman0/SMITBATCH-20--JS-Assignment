@@ -390,6 +390,14 @@
 // console.log(std);
 
 // Ek car object banao jisme brand aur model ho.
+
+// let car = {
+//     brand: "BMW",
+//     model: 2018
+// }
+// console.log(car);
+
+
 // Object ke andar function ka example do.
 // this keyword object me kya karta hai ?
 //     Object keys kaise nikalte hain ?
