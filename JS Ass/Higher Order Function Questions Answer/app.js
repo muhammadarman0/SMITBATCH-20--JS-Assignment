@@ -264,6 +264,10 @@
 
 //     reduce()
 // [1, 2, 3, 4] ka sum reduce() se nikalo.
+let sum = [1,2,3,4]
+let red = sum.reduce((prev,current) => prev + current)
+console.log(red);
+
 // Prices array ka total calculate karo.
 // Numbers array ka maximum value find karo using reduce().
 // Ek words array ko single sentence me convert karo.
