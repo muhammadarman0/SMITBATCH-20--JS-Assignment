@@ -441,17 +441,28 @@
 // console.log(nestedObj);
 
 // User object ke andar address object create karo.
-let user = {
-    name: "Arman",
-    age: 18,
-    address: {
-        city: "karachi",
-        homeAdd: "Krongi no 6"
-    }
-}
-console.log(user);
+// let user = {
+//     name: "Arman",
+//     age: 18,
+//     address: {
+//         city: "karachi",
+//         homeAdd: "Krongi no 6"
+//     }
+// }
+// console.log(user);
 
 // Nested object ki city access karo.
+
+// let nest = {
+//     client: "Ahmed",
+//     project: "E-commerce",
+//     city: {
+//         country: "Pakistan",
+//         city: "Karachi"
+//     }
+// }
+// console.log(nest.city.city);
+
 // Student object me marks object add karo.
 // Company object me employee object create karo.
 // Array of Objects
