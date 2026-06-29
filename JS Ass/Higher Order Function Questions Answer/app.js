@@ -342,9 +342,23 @@
 
 
 // Array me last negative number ka index find karo.
+
+// let neg = [-1,43,23,-10]
+
+// let negPrint = neg.findLastIndex((p)=> p < 0)
+// console.log(negPrint);
+
 //     Objects
 // Object kya hota hai JavaScript me ?
+
+// object javascript ma ek data type hoti ha aur container khi tara use karte isma hum function string number aur bohut refrence use karte ha aur object ma key hoti aur oski value
 //     Ek student object banao jisme name aur age ho.
+let stdObj = {
+    name: "Ahmed",
+    age: 19
+}
+console.log(stdObj);
+
 // Object ki property access karne ke 2 methods likho.
 // Object me new property add karo.
 // Object ki property delete karo.
