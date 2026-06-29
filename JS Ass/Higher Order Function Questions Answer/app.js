@@ -295,19 +295,19 @@
 // })
 
 // Shopping cart ka total bill calculate karo.
-let shopping = [{
-    product: "car",
-    prices: 120000,
-    name: "BMW"
-},
-{
-    product: "car",
-    prices: 123231,
-    name: "GWM"
-}]
+// let shopping = [{
+//     product: "car",
+//     prices: 120000,
+//     name: "BMW"
+// },
+// {
+//     product: "car",
+//     prices: 123231,
+//     name: "GWM"
+// }]
 
-let print = shopping.reduce((prev, currnet) => prev.prices + currnet.prices)
-console.log(print);
+// let print = shopping.reduce((prev, currnet) => prev.prices + currnet.prices)
+// console.log(print);
 
 //     findLastIndex()
 // [1, 2, 3, 2, 4, 2] me last 2 ka index find karo.
