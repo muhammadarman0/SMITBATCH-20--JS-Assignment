@@ -311,6 +311,11 @@
 
 //     findLastIndex()
 // [1, 2, 3, 2, 4, 2] me last 2 ka index find karo.
+
+// let find = [1,2,3,4,2]
+// let print = find.findLast((p) => p === 2)
+// console.log(print);
+
 // Last even number ka index find karo.
 // Ek names array me last "Ali" ka index find karo.
 // Ek products array me last expensive product ka index nikalo.
