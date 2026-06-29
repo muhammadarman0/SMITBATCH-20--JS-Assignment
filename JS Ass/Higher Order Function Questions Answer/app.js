@@ -353,13 +353,22 @@
 
 // object javascript ma ek data type hoti ha aur container khi tara use karte isma hum function string number aur bohut refrence use karte ha aur object ma key hoti aur oski value
 //     Ek student object banao jisme name aur age ho.
-let stdObj = {
-    name: "Ahmed",
-    age: 19
-}
-console.log(stdObj);
+// let stdObj = {
+//     name: "Ahmed",
+//     age: 19
+// }
+// console.log(stdObj);
 
 // Object ki property access karne ke 2 methods likho.
+
+// let obj = {
+//     product: "Kuch bhi",
+//     user: "koi bhi nhi"
+// }
+// console.log(obj.user);
+
+// console.log(obj["product"]);
+
 // Object me new property add karo.
 // Object ki property delete karo.
 // Ek car object banao jisme brand aur model ho.
