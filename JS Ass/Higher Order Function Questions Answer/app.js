@@ -370,7 +370,25 @@
 // console.log(obj["product"]);
 
 // Object me new property add karo.
+
+// let std = {
+//     name: "Arman",
+//     age: 19,
+// }
+// std.school = "Al-hamd"
+// console.log(std);
+
 // Object ki property delete karo.
+
+// let std = {
+//     name: "Arman",
+//     age: 19,
+// }
+// std.school = "Al-Hamd islamic foundation school"
+
+// delete(std.age)
+// console.log(std);
+
 // Ek car object banao jisme brand aur model ho.
 // Object ke andar function ka example do.
 // this keyword object me kya karta hai ?
