@@ -9,7 +9,7 @@ const resturantMenu = [
     }, {
         catergory: "biryani",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX4lr3u9v2CzcOPME5VYnZmbFWo1cpl1hhjKBX2bypzQ&s=10",
-        name: "Sada Biryani",
+        name: "Plane Biryani",
         desc: "Sada biryani best and tasty",
         Price: 120
     }, {
@@ -107,7 +107,7 @@ const allitem = () => {
                 </div>`
     })
 
-    console.log(allIt);
+    // console.log(allIt);
 
     container.innerHTML = showHTML.join(" ")
 }
@@ -239,6 +239,7 @@ const searchItme = () => {
     // console.log(filterSearchItem);
     container.innerHTML = showHTML.join("  ")
     console.log("ma chala");
+    searchValue = ""
 
 }
 const orderitem = () => {
@@ -246,8 +247,9 @@ const orderitem = () => {
         window.location.href = "https://api.whatsapp.com/send/?phone=923001234567&text=Assalam-o-Alaikum%2C+mujhe+order+karna+hai&type=phone_number&app_absent=0"
     })
 }
-const order2 = () =>{
-        setInterval(() => {
+const order2 = () => {
+    // if()
+    setInterval(() => {
         window.location.href = "https://api.whatsapp.com/send/?phone=923001234567&text=Assalam-o-Alaikum%2C+mujhe+order+karna+hai&type=phone_number&app_absent=0"
     })
 }
