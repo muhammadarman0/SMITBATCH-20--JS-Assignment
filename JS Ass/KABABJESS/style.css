@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    background-color: white;
+}
+
+/* Scalloped red top border */
+.scallop-strip {
+    height: 20px;
+    background-color: #fff;
+    background-image: radial-gradient(circle at 10px 0, transparent 10px, #e42328 11px);
+    background-size: 20px 20px;
+    background-repeat: repeat-x;
+}
+
+.header-wrap {
+    background: #fff;
+    padding: 14px 16px;
+}
+
+.header {
+    max-width: 1110px;
+    margin: 0 auto;
+    background: #efefef;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8px 18px;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+/* Reusable pieces */
+.location,
+.contact,
+.complaint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    /* allow shrinking inside flex */
+}
+
+.location {
+    background: #fff;
+    border-radius: 30px;
+    padding: 7px 16px 7px 7px;
+    flex-shrink: 1;
+}
+
+.location .pin {
+    width: 30px;
+    height: 30px;
+    background: #e42328;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.location .text {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.location .text strong {
+    font-size: 12.5px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.location .text small {
+    font-size: 10.5px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact .icon,
+.complaint .icon {
+    width: 30px;
+    height: 30px;
+    background: #fbdadb;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e42328;
+    flex-shrink: 0;
+}
+
+.contact .text {
+    min-width: 0;
+}
+
+.contact .text strong {
+    font-size: 12.5px;
+    display: block;
+    white-space: nowrap;
+}
+
+.contact .text small {
+    font-size: 11px;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 48px;
+    margin-bottom: 2px;
+}
+
+.logo .name {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo .name .black {
+    color: #111;
+}
+
+.logo .name .red {
+    color: #e42328;
+}
+
+/* Complaint box */
+.complaint {
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #f3c9ca;
+    border-radius: 14px;
+    padding: 7px 12px;
+    flex-shrink: 1;
+    min-width: 170px;
+}
+
+.complaint .text {
+    min-width: 0;
+}
+
+.complaint .text strong {
+    font-size: 12px;
+    display: block;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.complaint .text small {
+    font-size: 10px;
+    color: #888;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Right icons */
+.right-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.icon-btn {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    background: #fbdadb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e42328;
+    flex-shrink: 0;
+}
+
+.icon-btn .badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background: #e42328;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.set_img{
+    max-width: 100px;
+}
+
+
+
+/* ------------ img --------- */
+@media(max-width:1024px){
+    .set_img>img{
+        width: 750px;
+    }
+}
+@media(max-width:768px){
+    .set_img>img{
+        width: 350px;
+    }
+}
+/* ---------- Tablet ---------- */
+
+@media (max-width: 992px) {
+    .header {
+        flex-wrap: wrap;
+        border-radius: 24px;
+        row-gap: 10px;
+        justify-content: center;
+    }
+
+    .location {
+        order: 1;
+    }
+
+    .contact {
+        order: 2;
+    }
+
+    .right-icons {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .logo {
+        order: 4;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .complaint {
+        order: 5;
+        width: 100%;
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 560px) {
+    .header-wrap {
+        padding: 10px 8px;
+    }
+
+    .header {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .logo img {
+        height: 38px;
+    }
+
+    .logo .name {
+        font-size: 14px;
+    }
+
+    .location {
+        padding: 6px 12px 6px 6px;
+    }
+
+    .location .pin {
+        width: 26px;
+        height: 26px;
+    }
+
+    .location .text strong {
+        font-size: 11px;
+    }
+
+    .location .text small {
+        font-size: 9.5px;
+    }
+
+    .contact .icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .contact .text strong {
+        font-size: 11px;
+    }
+
+    .contact .text small {
+        font-size: 10px;
+    }
+
+    .complaint {
+        padding: 6px 10px;
+        min-width: 0;
+    }
+
+    .complaint .text strong {
+        font-size: 10.5px;
+    }
+
+    .complaint .text small {
+        font-size: 9px;
+    }
+
+    .complaint .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon-btn {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ---------- Very small screens ---------- */
+@media (max-width: 380px) {
+    .contact .text small {
+        display: none;
+    }
+
+    /* keep label, hide long number if too tight */
+    .location,
+    .contact {
+        flex: 1 1 45%;
+    }
+}
+
+/* scetion 3 */
+
+.category-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-scroll {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 45px 15px 5px;
+    /* hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    flex: 0 0 auto;
+    width: 90px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.category-item .icon-box {
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-item:hover .icon-box {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-item span {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.category-item.disabled span {
+    color: #b5b5b5;
+}
+
+/* Arrow button */
+.scroll-arrow {
+    position: absolute;
+    top: 40%;
+    right: -5px;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s ease;
+}
+
+.scroll-arrow:hover {
+    background: #f5f5f5;
+}
+
+.scroll-arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Fade edge on the right so arrow blends nicely */
+.fade-edge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .category-item {
+        width: 75px;
+    }
+
+    .category-item .icon-box {
+        width: 75px;
+        height: 75px;
+        border-radius: 14px;
+    }
+
+    .category-item span {
+        font-size: 11.5px;
+    }
+
+    .scroll-arrow {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-item {
+        width: 66px;
+    }
+
+    .category-item .icon-box {
+        width: 66px;
+        height: 66px;
+        border-radius: 12px;
+    }
+
+    .category-scroll {
+        gap: 14px;
+    }
+
+    .category-item span {
+        font-size: 10.5px;
+    }
+}
