@@ -230,6 +230,7 @@ body {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    padding: 5px;
 }
 
 /* ---------- Tablet ---------- */
@@ -505,7 +506,7 @@ body {
 .searchItem {
     width: 100%;
     /* background-color: red; */
-    max-width: 950px;
+    max-width: 1150px;
     /* padding: 10px; */
     margin: 10px;
     margin: 0 auto;
@@ -548,6 +549,13 @@ body {
 }
 
 /* section 5 */
+.headSite {
+    max-width: 1248px;
+    padding: 16px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .headSite>h1 {
     font-family: cursive;
 }
@@ -557,10 +565,12 @@ body {
     height: 505px;
     padding: 16px;
     width: 100%;
-    margin: 0 auto;
     display: flex;
     gap: 20px;
+    /* justify-content: center; */
+    align-items: center;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .menu-card>img {
@@ -596,4 +606,23 @@ body {
     align-items: center;
     font-size: 35px;
     margin-left: 150px;
+    cursor: pointer;
+}
+
+.exclusive_img {
+    max-width: 1440px;
+    width: 100%;
+}
+
+.exclusive_img>img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media(max-width:1024px) {
+    .popular-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
