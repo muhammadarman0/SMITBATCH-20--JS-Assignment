@@ -1,28 +1,22 @@
-let scrollContainer = document.getElementById("categoryScroll")
-
-let scrollArrow = document.getElementById("scrollArrow")
+let scrollBox = document.getElementById("categoryScroll")
+let btnArrow = document.getElementById("scrollArrow")
 
 function scrollRight() {
-    const scrollAmount = scrollContainer.clientWidth * 0.6
-    scrollContainer.scrollBy({ left: scrollAmount, behavior: "smooth" })
-    
+    let lengthContainer = scrollBox.clientWidth * 0.6;
+    scrollBox.scrollBy({ left: lengthContainer, behavior: "smooth" })
 }
 
-console.log(scrollContainer);
-
-function updateScroll(){
-    let maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth
-    if(scrollContainer.scrollLeft >= maxScroll -5){
-        scrollArrow.style.opacity = 0;
-        scrollArrow.style.pointerEvents = "none"
-    }else{
-          scrollArrow.style.opacity = 1;
-        scrollArrow.style.pointerEvents = "auto"
+function updateScroll() {
+    let reveseContainer = scrollBox.scrollWidth - scrollBox.clientWidth;
+    if (scrollBox.scrollLeft >= reveseContainer - 5) {
+        btnArrow.style.opacity = "0";
+        btnArrow.style.pointerEvents = "none"
+    } else {
+        btnArrow.style.opacity = "1";
+        btnArrow.style.pointerEvents = "auto"
     }
-    // console.log(maxScroll);
+    console.log(reveseContainer);
     
 }
-
-scrollContainer.addEventListener("scroll", updateScroll)
-
+scrollBox.addEventListener("scroll", updateScroll)
 window.addEventListener("resize",updateScroll)

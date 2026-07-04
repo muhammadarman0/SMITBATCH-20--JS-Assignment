@@ -219,23 +219,19 @@ body {
     justify-content: center;
 }
 
-.set_img{
-    max-width: 100px;
+.set_img {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
-
-
-/* ------------ img --------- */
-@media(max-width:1024px){
-    .set_img>img{
-        width: 750px;
-    }
+.set_img>img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
-@media(max-width:768px){
-    .set_img>img{
-        width: 350px;
-    }
-}
+
 /* ---------- Tablet ---------- */
 
 @media (max-width: 992px) {
@@ -502,4 +498,51 @@ body {
     .category-item span {
         font-size: 10.5px;
     }
+}
+
+/* section 4 */
+
+.searchItem {
+    width: 100%;
+    /* background-color: red; */
+    max-width: 950px;
+    /* padding: 10px; */
+    margin: 10px;
+    margin: 0 auto;
+}
+
+.searchItem>input {
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 52px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    border: 2px solid #EC1E26;
+    margin-bottom: 20px;
+}
+
+.searchItem {
+    position: relative;
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    color: #EC1E26;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.fa-circle-right {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    cursor: pointer;
+    color: #EC1E26;
+    font-size: 32px;
 }
