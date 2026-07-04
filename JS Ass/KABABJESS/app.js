@@ -15,8 +15,33 @@ function updateScroll() {
         btnArrow.style.opacity = "1";
         btnArrow.style.pointerEvents = "auto"
     }
-    console.log(reveseContainer);
-    
+
 }
 scrollBox.addEventListener("scroll", updateScroll)
-window.addEventListener("resize",updateScroll)
+window.addEventListener("resize", updateScroll)
+
+
+// Section 4
+
+// const textWrap = [
+//     "Family Comdo 3",
+//     "Juciy Buger",
+//     "Crunch & Munch",
+//     "THE MAJESTY",
+//     "CHESS SILECC"
+// ]
+// let inp = document.getElementById("inputVal")
+
+// let a = 0;
+// let b = 0;
+// let boolean = false
+// console.log(inp.placeholder);
+// setInterval(() => {
+//     boolean ? b-- : b++;
+//     inp.placeholder.innerHTML = textWrap[a].slice(0, b)
+//     if (b === textWrap[a].length + 1) boolean = true
+//     if (b === 0 % boolean) {
+//         boolean = false
+//         a = (a + 1) % textWrap.length
+//     }
+// }, 120)

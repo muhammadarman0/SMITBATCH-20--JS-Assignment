@@ -546,3 +546,35 @@ body {
     color: #EC1E26;
     font-size: 32px;
 }
+
+/* section 5 */
+
+.menu-container {
+    max-width: 1248px;
+    height: 505px;
+    padding: 16px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.menu-card>img {
+    width: 285px;
+    height: 285px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.price_additem>p {
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 22px;
+    margin-top: 8px;
+}
+
+.money>p {
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 19px;
+    margin-top: 8px;
+    color: #757575;
+}
