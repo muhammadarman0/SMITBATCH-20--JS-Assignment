@@ -323,6 +323,9 @@
 
 // };
 
+// const {email} = account
+
+// console.log(email);
 
 
 // Question 14
@@ -334,9 +337,15 @@
 
 // const company = {
 
-// employees: ["Ali", "Ahmed", "Sara"]
+//     employees: ["Ali", "Ahmed", "Sara"]
 
 // };
+
+// const { employees } = company;
+
+// const [one, two, three] = employees
+
+// console.log(one, two, three);
 
 
 
@@ -360,7 +369,12 @@
 
 
 
-// const numbers = [1,2,3,4,5];
+// const numbers = [1, 2, 3, 4, 5];
+
+// const [one, two, ...other] = numbers
+// console.log(one, two);
+// console.log(other);
+
 
 
 
@@ -385,15 +399,19 @@
 
 // const user = {
 
-// name: "Hasan",
+//     name: "Hasan",
 
-// age: 22,
+//     age: 22,
 
-// city: "Lahore",
+//     city: "Lahore",
 
-// country: "Pakistan"
+//     country: "Pakistan"
 
 // };
+
+// const { name, ...other } = user
+// console.log(name);
+// console.log(other);
 
 
 
@@ -410,13 +428,25 @@
 // Question 17
 // Create a function using Rest Parameters.
 
-// Example
+
+// function total(...numbers) {
+//   let sum = 0;
+
+//   for (let num of numbers) {
+//     sum += num;
+//   }
+
+//   return sum;
+// }
+
+
+// // Example
 
 
 
 
 
-// sum(10,20,30,40);
+// console.log(total(10, 20, 30, 40));
 
 
 
@@ -450,6 +480,9 @@
 
 // const backend = ["Node", "MongoDB"];
 
+// const fullstackDev = [...frontend,...backend]
+
+// console.log(fullstackDev);
 
 
 // Expected
@@ -468,6 +501,9 @@
 
 
 // const fruits = ["Apple","Banana","Orange"];
+
+// const copy = [...fruits]
+// console.log(copy);
 
 
 
@@ -495,6 +531,9 @@
 // city: "Lahore"
 
 // };
+
+// const oneObj = {...user,...details}
+// console.log(oneObj);
 
 
 
