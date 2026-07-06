@@ -196,12 +196,15 @@
 
 // const student = {
 
-// name: "Ayesha",
+//     name: "Ayesha",
 
-// class: "10th"
+//     class: "10th"
 
 // };
 
+// const { name:studentName, class:studentClass } = student
+
+// console.log(studentName,studentClass);
 
 
 // Expected variables
@@ -227,7 +230,11 @@
 
 // };
 
+// const newWorker = {...employee,work: 5000} 
 
+// const {name,work} = newWorker
+
+// console.log(name,work);
 
 // Expected
 
@@ -248,19 +255,22 @@
 
 // const person = {
 
-// name: "Ali",
+//     name: "Ali",
 
-// address: {
+//     address: {
 
-// city: "Karachi",
+//         city: "Karachi",
 
-// country: "Pakistan"
+//         country: "Pakistan"
 
-// }
+//     }
 
 // };
+// const { address} = person
 
+// const {city,country} = address
 
+// console.log(city,country);
 
 // Expected
 
@@ -289,6 +299,9 @@
 
 // };
 
+// const {title,price,brand} = product
+
+// console.log(title,price,brand);
 
 
 // Print all values.
