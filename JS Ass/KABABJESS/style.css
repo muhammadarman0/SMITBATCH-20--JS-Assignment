@@ -562,7 +562,7 @@ body {
 
 .popular-items {
     max-width: 1248px;
-    height: 505px;
+    /* height: 505px; */
     padding: 16px;
     width: 100%;
     display: flex;
@@ -580,11 +580,20 @@ body {
     margin-top: 20px;
 }
 
-.price_additem>p {
+.para1 {
     font-weight: bold;
     font-family: cursive;
-    font-size: 22px;
+    font-size: 17px;
     margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.para2 {
+    flex-wrap: wrap;
+    max-width: 250px;
+    margin: 3px;
+    color: #757575;
+    width: 100%;
 }
 
 .money {
@@ -624,5 +633,329 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+.popular-items2 {
+    max-width: 1248px;
+    /* padding: 16px; */
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.menu-card2 {
+    border: 1px solid #C1C3C7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.menu-card2>img {
+    width: 285px;
+    height: 285px;
+    border-radius: 10px;
+    /* margin-top: 20px; */
+}
+
+.money2 {
+    display: flex;
+
+}
+
+.money2>p {
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 19px;
+    margin-top: 8px;
+}
+
+/* foooter */
+
+:root {
+    --red: #ED1C24;
+    --red-dark: #C81419;
+    --black: #1a1a1a;
+    --gray: #555;
+    --gray-light: #888;
+    --border: #e4e4e4;
+    --cream: #fff;
+}
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 40px;
+    margin-top: 80px;
+}
+
+/* ---------- TOP LINKS SECTION ---------- */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px 30px 30px;
+    gap: 30px;
+}
+
+.col {
+    flex: 1 1 220px;
+    min-width: 180px;
+    border-left: 1px solid var(--border);
+    padding-left: 30px;
+}
+
+.col.logo-col {
+    border-left: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 1 260px;
+}
+
+
+
+
+.col h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 16px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gray);
+    font-size: 15px;
+}
+
+.phone-icon {
+    width: 34px;
+    height: 34px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.phone-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 34px;
+    height: 34px;
+    background: var(--red);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.social-icon:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+}
+
+.divider {
+    color: #ccc;
+    font-weight: 300;
+}
+
+.col ul {
+    list-style: none;
+}
+
+.col ul li {
+    margin-bottom: 12px;
+}
+
+.col ul li a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color .2s ease;
+}
+
+.col ul li a:hover {
+    color: var(--red);
+}
+
+/* ---------- FOOD ILLUSTRATION STRIP ---------- */
+.food-strip {
+    /* display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: clamp(-10px, -1vw, 10px);
+    padding: 20px 10px 0 10px;
+    overflow: hidden;
+    flex-wrap: nowrap; */
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.food-strip img {
+    /* height: clamp(90px, 14vw, 190px);
+    width: auto;
+    object-fit: contain;
+    margin: 0 -8px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+    flex-shrink: 1; */
+    width: 100%;
+}
+
+/* ---------- BOTTOM RED BAR ---------- */
+.footer-bottom {
+    background: var(--red);
+    position: relative;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.footer-bottom p a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.footer-bottom p a:hover {
+    opacity: 0.85;
+}
+
+.search-btn,
+.top-btn {
+    position: fixed;
+    bottom: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--red-dark);
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+
+.search-btn:hover,
+.top-btn:hover {
+    transform: scale(1.08);
+}
+
+.search-btn {
+    left: 20px;
+}
+
+.top-btn {
+    right: 20px;
+}
+
+.search-btn svg,
+.top-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .footer-top {
+        justify-content: flex-start;
+    }
+
+    .col {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-top {
+        flex-direction: column;
+        padding: 0 20px 20px 20px;
+    }
+
+    .col {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    .col.logo-col {
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+    .food-strip img {
+        height: 70px;
+        margin: 0 -10px;
+    }
+
+    .footer-bottom {
+        padding-bottom: 60px;
+    }
+
+    .search-btn {
+        left: 14px;
+        bottom: 10px;
+    }
+
+    .top-btn {
+        right: 14px;
+        bottom: 10px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 380px) {
+    .food-strip img {
+        height: 55px;
     }
 }
