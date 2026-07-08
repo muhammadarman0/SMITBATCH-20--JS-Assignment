@@ -159,16 +159,52 @@ const quizzes = {
     ]
 };
 
+// console.log(quizzes.html[0].options);
+
 const option1 = document.querySelector(".option1")
 
 const dropDown = document.querySelector("#quiz")
 
-const showQuizHtml = () => {
-    console.log(dropDown.value);
+const select = document.querySelector("#select")
 
-    if (dropDown.value.toLowerCase() === "HTML".toLowerCase()){
-        console.log("done");
-        
+const quizQuestion = document.querySelector(".not-show")
+
+const questionHead = document.querySelector("#quetion-text")
+
+const questionOption = document.querySelectorAll(".correct-wrong")
+
+// const selectOption = document.querySelector("#select-option")
+
+// console.log(selectOption);
+let indexVal = 0;
+
+let score = 0
+
+
+
+
+
+
+const showQuizHtml = () => {
+
+    let selectQuiz = quizzes[dropDown.value]
+
+
+    let changeQ = selectQuiz[indexVal]
+
+    console.log(changeQ.options[0]);
+
+
+    if (changeQ) {
+        select.style.display = "none";
+        quizQuestion.style.display = "block"
+        questionHead.innerHTML = changeQ.question
+
+        questionOption.forEach((btn,index) => {
+            btn.textContent = changeQ.options[index]
+            
+        })
+
     }
 
 }
@@ -176,3 +212,4 @@ const showQuizHtml = () => {
 
 
 option1.addEventListener("click", showQuizHtml)
+
