@@ -187,6 +187,7 @@ const yourNumber = document.querySelector("#number")
 const showPassFailed = document.querySelector("#showPassed-Failed")
 
 const option3 = document.querySelector(".option3")
+const quizResult = document.getElementById("quizResult")
 let ans = false
 
 
@@ -196,15 +197,25 @@ let score = 0
 
 
 
+// console.log(dropDown)
+
+
+
+// let changeQ = selectQuiz[indexVal]
 
 
 
 const showQuizHtml = () => {
+    console.log(quizzes[dropDown.value]);
 
     let selectQuiz = quizzes[dropDown.value]
 
+    console.log(selectQuiz.length);
+    
 
     let changeQ = selectQuiz[indexVal]
+    console.log(changeQ);
+    
 
     // console.log(changeQ.options[0]);
     correctAnswer.innerHTML = `Question ${indexVal + 1}/ ${selectQuiz.length}`
@@ -243,7 +254,6 @@ const checkAnswer = (event) => {
     console.log(changeQ.answer);
     if (btnTextContent === changeQ.answer) {
         // console.log(btnTextContent);
-
         score++
     } else {
         console.log("wrong");
@@ -290,6 +300,7 @@ const showResult = () => {
         showPassFailed.innerHTML = "Passed"
     } else {
         showPassFailed.innerHTML = "Failed"
+        quizResult.style.backgroundColor = "red"
     }
 }
 
