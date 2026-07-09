@@ -173,9 +173,23 @@ const questionHead = document.querySelector("#quetion-text")
 
 const questionOption = document.querySelectorAll(".correct-wrong")
 
-// const selectOption = document.querySelector("#select-option")
 
-// console.log(selectOption);
+const correctAnswer = document.querySelector(".correct-answer")
+
+const timer = document.querySelector(".timer")
+
+const option2 = document.querySelector("#option2")
+
+const hidden3 = document.querySelector(".hidden3")
+
+const yourNumber = document.querySelector("#number")
+
+const showPassFailed = document.querySelector("#showPassed-Failed")
+
+const option3 = document.querySelector(".option3")
+let ans = false
+
+
 let indexVal = 0;
 
 let score = 0
@@ -192,24 +206,110 @@ const showQuizHtml = () => {
 
     let changeQ = selectQuiz[indexVal]
 
-    console.log(changeQ.options[0]);
+    // console.log(changeQ.options[0]);
+    correctAnswer.innerHTML = `Question ${indexVal + 1}/ ${selectQuiz.length}`
 
+    if(!dropDown.value === ""){
+alert("Please select your quiz")
+    }
 
     if (changeQ) {
         select.style.display = "none";
         quizQuestion.style.display = "block"
         questionHead.innerHTML = changeQ.question
 
-        questionOption.forEach((btn,index) => {
+        questionOption.forEach((btn, index) => {
             btn.textContent = changeQ.options[index]
-            
+            btn.style.opacity = "1"
+            btn.disabled = false
+            btn.style.backgroundColor = ""
         })
-
     }
 
 }
+// document.body.style.
+const checkAnswer = (event) => {
+    // console.log(event.target.textContent);
+
+    const btnTextContent = event.target.textContent;
+    let selectQuiz = quizzes[dropDown.value]
 
 
+    let changeQ = selectQuiz[indexVal]
+    ans = true
+    console.log(changeQ.answer);
+    if (btnTextContent === changeQ.answer) {
+        // console.log(btnTextContent);
+
+        score++
+    } else {
+        console.log("wrong");
+    }
+
+    questionOption.forEach((btn) => {
+        if (btn.textContent === changeQ.answer) {
+            btn.style.backgroundColor = "green";
+        }
+
+        if (btn === event.target && btn.textContent !== changeQ.answer) {
+            btn.style.backgroundColor = "red";
+        }
+        btn.style.opacity = "0.5"
+        btn.disabled = true
+    })
+}
+
+const nextQuestion = () => {
+    let selectQuiz = quizzes[dropDown.value]
+
+    if (!ans) {
+        alert("please select your answer")
+        return
+    }
+
+    indexVal++
+    if (indexVal >= selectQuiz.length) {
+        quizQuestion.style.display = "none"
+        hidden3.style.display = "block"
+        showResult()
+        return
+    }
+    console.log(indexVal);
+
+    ans = false
+    showQuizHtml()
+}
+
+const showResult = () => {
+    let selectQuiz = quizzes[dropDown.value]
+    yourNumber.innerHTML = `${score} / ${selectQuiz.length}`
+    if (score >= 3) {
+        showPassFailed.innerHTML = "Passed"
+    } else {
+        showPassFailed.innerHTML = "Failed"
+    }
+}
+
+const restartQuiz = () => {
+
+    indexVal = 0;
+    score = 0;
+    ans = false
+
+    hidden3.style.display = "none"
+    quizQuestion.style.display = "none"
+    select.style.display = "block"
+    dropDown.value = "";
+}
+
+questionOption.forEach((btn) => {
+    btn.addEventListener("click", checkAnswer)
+
+})
 
 option1.addEventListener("click", showQuizHtml)
 
+
+option2.addEventListener("click", nextQuestion)
+
+option3.addEventListener("click", restartQuiz)

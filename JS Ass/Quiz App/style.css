@@ -164,6 +164,11 @@ body {
     cursor: pointer;
 }
 
+.selectOption>button:focus{
+        opacity: 0.5;
+    cursor: pointer;
+}
+
 #option2 {
     display: flex;
     padding: 15px;
