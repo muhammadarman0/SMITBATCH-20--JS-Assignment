@@ -206,15 +206,8 @@ let score = 0
 
 
 const showQuizHtml = () => {
-    console.log(quizzes[dropDown.value]);
-
     let selectQuiz = quizzes[dropDown.value]
-
-    console.log(selectQuiz.length);
-    
-
     let changeQ = selectQuiz[indexVal]
-    console.log(changeQ);
     
 
     // console.log(changeQ.options[0]);
@@ -251,12 +244,9 @@ const checkAnswer = (event) => {
 
     let changeQ = selectQuiz[indexVal]
     ans = true
-    console.log(changeQ.answer);
     if (btnTextContent === changeQ.answer) {
         // console.log(btnTextContent);
         score++
-    } else {
-        console.log("wrong");
     }
 
     questionOption.forEach((btn) => {
@@ -287,7 +277,6 @@ const nextQuestion = () => {
         showResult()
         return
     }
-    console.log(indexVal);
 
     ans = false
     showQuizHtml()
