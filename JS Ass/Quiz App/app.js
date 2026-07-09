@@ -209,10 +209,13 @@ const showQuizHtml = () => {
     // console.log(changeQ.options[0]);
     correctAnswer.innerHTML = `Question ${indexVal + 1}/ ${selectQuiz.length}`
 
-    if(!dropDown.value === ""){
-alert("Please select your quiz")
+    if (!dropDown.value === "") {
+        alert("Please select your quiz")
+        return
     }
-
+    if (dropDown) {
+        option1.style.opacity = "1"
+    }
     if (changeQ) {
         select.style.display = "none";
         quizQuestion.style.display = "block"
