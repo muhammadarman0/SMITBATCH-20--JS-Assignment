@@ -287,6 +287,8 @@ const showResult = () => {
     yourNumber.innerHTML = `${score} / ${selectQuiz.length}`
     if (score >= 3) {
         showPassFailed.innerHTML = "Passed"
+        quizResult.style.backgroundColor = "green"
+
     } else {
         showPassFailed.innerHTML = "Failed"
         quizResult.style.backgroundColor = "red"
