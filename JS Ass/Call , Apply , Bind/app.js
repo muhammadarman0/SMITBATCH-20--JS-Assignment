@@ -13,25 +13,34 @@
 
 
 
-// const user = {
+// const user1 = {
+//     name: "arman",
+//     age: 18,
+//     class: "11th"
+// }
 
-// name:"Hasan"
-
-// };
-
-
-
-// function greet(city){
-
-// console.log(this.name, city);
+// const user2 = {
+//     name: "ahmed",
+//     age: 21,
+//     class: "12th"
 
 // }
 
 
+// function showUser(...arg) {
+//     console.log(arg);
+//     // console.log(this[c]);
 
-// greet.call(user,"Karachi");
+//     let [name] = arg
+//     console.log(name);
+    
+    
+// }
 
-
+// // showUser.call(user1, "name")
+// showUser.apply(user2,["name","class"])
+// let showDetail =  showUser.bind(user1,"age","class")
+// console.log(showDetail());
 
 // Q29.
 // Output batayein.
@@ -56,6 +65,7 @@
 
 // const result = sayHello.bind(user);
 
+// console.log(result("pakistan"));
 
 
 // result("Pakistan");
