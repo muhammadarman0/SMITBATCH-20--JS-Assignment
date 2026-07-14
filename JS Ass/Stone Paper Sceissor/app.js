@@ -15,9 +15,9 @@ const genCompChoice = () => {
 }
 
 const Draw = () => {
-msg.style.backgroundColor = "grey"
-msg.style.color = "white"
-msg.innerHTML = ` It's a tie!`
+    msg.style.backgroundColor = "grey"
+    msg.style.color = "white"
+    msg.innerHTML = ` It's a tie!`
 }
 
 const showWinner = (userWins) => {

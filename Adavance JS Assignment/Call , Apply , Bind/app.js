@@ -71,20 +71,20 @@
 // result("Pakistan");
 
 
-const student = {
+// const student = {
 
-name: "Ali",
+// name: "Ali",
 
-age: 20
+// age: 20
 
-};
-
-
-
-student.city = "Karachi";
-
-delete student.age;
+// };
 
 
 
-console.log(student);
+// student.city = "Karachi";
+
+// delete student.age;
+
+
+
+// console.log(student);
