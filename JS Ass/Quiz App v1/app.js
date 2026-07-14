@@ -217,8 +217,8 @@ const showQuizHtml = () => {
         alert("Please select your quiz")
         return
     }
-    if (dropDown) {
-        option1.style.opacity = "1"
+    if (dropDown.selected) {
+        option1.style.backgroundColor = "blue"
     }
     if (changeQ) {
         select.style.display = "none";
