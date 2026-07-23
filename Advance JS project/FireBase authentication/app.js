@@ -44,7 +44,15 @@
 
 // function greet() {
 //   return this.name;
+// console.log(typeof Object);
+
 // }
+// let obj = {
+//     a:1
+// }
+
+// console.log(obj["a"]);
+
 
 // const fn = greet.bind(user);
 
