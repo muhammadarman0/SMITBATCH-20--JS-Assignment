@@ -128,3 +128,6 @@
 .price>button:hover{
  box-shadow: rgba(10, 48, 46, 0.2) 0px 7px 29px 0px;;
 }
+#productCard{
+    cursor: default;
+}
