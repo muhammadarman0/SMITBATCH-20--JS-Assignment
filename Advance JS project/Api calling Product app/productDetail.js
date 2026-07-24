@@ -19,7 +19,7 @@ const productDetailUI = async (id) => {
         let apiCall = await fetch(`https://dummyjson.com/products/${id}`)
         let response = await apiCall.json()
         console.log(response);
-        id = 0
+        response.id = "0"
         setTimeout(() => {
             productImage.src = response.images[0]
         }, 1000)
