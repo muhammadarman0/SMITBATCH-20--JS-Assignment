@@ -1,5 +1,8 @@
 // console.log("api is runing");
 
+let serachInput = document.getElementById("serachInput")
+
+let searhIcon = document.getElementById("searhIcon")
 
 const productCard = document.querySelector(".productCard")
 function startApp() {
@@ -25,22 +28,22 @@ function startApp() {
 
             return ` 
             <a  id="productCard" href="productDetails.html" target="_blank">
-            <div class="apiCallingPr" id=${id}>
-                <div class="imgPro">
-                    <img class=""
+            <div class="apiCallingPr dummyclass" id=${id}>
+                <div id="${id}" class="imgPro">
+                    <img id="${id}" class="dummyclass"
                         src=${items.images[0]}
                         alt="">
-                    <h2>${items.title.slice(0, 20)}</h2>
+                    <h2 class="dummyclass">${items.title.slice(0, 20)}</h2>
                 </div>
-                <div class="product_detail">
-                    <h3>${items.brand} </h3>
-                    <button>${items.category}</button>
+                <div id="${id}" class="product_detail dummyclass">
+                    <h3 class="dummyclass">${items.brand} </h3>
+                    <button class="dummyclass" id="${id}">${items.category}</button>
                 </div>
-                <div class="desc">
-                    <p>${items.description.slice(0, 20)}...</p>
+                <div id="${id}" class="desc dummyclass">
+                    <p class="dummyclass" id="${id}">${items.description.slice(0, 20)}...</p>
                 </div>
-                <div class="price">
-                    <button>${items.price}</button>
+                <div class="price dummyclass">
+                    <button id="${id}" class=""dummyclass>${items.price}</button>
                 </div>
                 </div>
                 </a>
@@ -55,10 +58,53 @@ function startApp() {
 
 startApp()
 
+const serahEachProduct = async () => {
+
+    let value = serachInput.value
+    let apiData = await fetch(`https://dummyjson.com/products/search?q=${encodeURIComponent(value)}`)
+    let searchProduct = await apiData.json();
+    
+    const { products } = searchProduct
+    console.log(products);
+    const eachItems = products.map((search) => {
+        let id = search.id;
+        return ` <a  id="productCard" href="productDetails.html" target="_blank">
+            <div class="apiCallingPr dummyclass" id=${id}>
+                <div id="${id}" class="imgPro">
+                    <img id="${id}" class="dummyclass"
+                        src=${search.images[0]}
+                        alt="">
+                    <h2 class="dummyclass">${search.title.slice(0, 20)}</h2>
+                </div>
+                <div id="${id}" class="product_detail">
+                    <h3>${search.brand} </h3>
+                    <button>${search.category}</button>
+                </div>
+                <div id="${id}" class="desc dummyclass">
+                    <p>${search.description.slice(0, 20)}...</p>
+                </div>
+                <div class="price dummyclass">
+                    <button id="${id}" class=""dummyclass>${search.price}</button>
+                </div>
+                </div>
+                </a>
+    `    
+    console.log(eachItems);
+    
+})
+productCard.innerHTML = eachItems.join("")
+
+}
+
+
 document.addEventListener("click", (e) => {
     let elem = e.target
-    if (elem.classList.contains("apiCallingPr")) {
-        localStorage.setItem("id", JSON.stringify(elem.id))
-    }
+    if (elem.classList.contains("dummyclass")) {
+        localStorage.setItem("id", JSON.stringify(elem.id)) || []
 
+    }
 })
+
+
+
+searhIcon.addEventListener("click", serahEachProduct)

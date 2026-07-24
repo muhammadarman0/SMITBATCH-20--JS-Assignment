@@ -19,8 +19,10 @@ const productDetailUI = async (id) => {
         let apiCall = await fetch(`https://dummyjson.com/products/${id}`)
         let response = await apiCall.json()
         console.log(response);
-
-        productImage.src = response.images[0]
+        id = 0
+        setTimeout(() => {
+            productImage.src = response.images[0]
+        }, 1000)
         title.innerHTML = response.title
         category.innerHTML = response.category
         description.innerHTML = response.description
@@ -31,8 +33,8 @@ const productDetailUI = async (id) => {
         shipping.innerHTML = response.shippingInformation
         weight.innerHTML = response.weight + "kg"
         rating.innerHTML = response.rating
-        price.innerHTML = response.price+"$"
-        discount.innerHTML = response.discountPercentage+"%"
+        price.innerHTML = response.price + "$"
+        discount.innerHTML = response.discountPercentage + "%"
 
 
     } catch (error) {
