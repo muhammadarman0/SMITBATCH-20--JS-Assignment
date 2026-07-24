@@ -100,7 +100,7 @@ const serahEachProduct = async () => {
 document.addEventListener("click", (e) => {
     let elem = e.target
     if (elem.classList.contains("dummyclass")) {
-        localStorage.setItem("id", JSON.stringify(elem.id)) || []
+        localStorage.setItem("id", JSON.stringify(elem.id))
 
     }
 })
