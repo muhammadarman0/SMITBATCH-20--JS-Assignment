@@ -131,3 +131,7 @@
 #productCard{
     cursor: default;
 }
+h1{
+    margin-top: 150px;
+    font-size: 40px;
+}

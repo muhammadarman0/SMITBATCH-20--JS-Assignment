@@ -25,6 +25,7 @@ function startApp() {
             // console.log(items);
             let id = items.id;
             console.log(id);
+            productCard.innerHTML = `<h1>Loading App....</h1>`
 
             return ` 
             <div class="apiCallingPr dummyclass" id=${id}>
@@ -49,10 +50,9 @@ function startApp() {
                 </div>
             `
         })
-        // setTimeout(()=>{
-        productCard.innerHTML = returnHTML.join(" ")
-        // },1000)
-
+        setTimeout(() => {
+            productCard.innerHTML = returnHTML.join(" ")
+        }, 1000)
     })
 }
 
@@ -66,6 +66,12 @@ const serahEachProduct = async () => {
 
     const { products } = searchProduct
     console.log(products);
+
+    if (value.trim() === "") {
+        startApp()
+        return
+    }
+
     const eachItems = products.map((search) => {
         let id = search.id;
         return `  <div class="apiCallingPr dummyclass" id=${id}>
@@ -84,7 +90,7 @@ const serahEachProduct = async () => {
                     <p class="dummyclass" id="${id}">${search.description.slice(0, 20)}...</p>
                 </div>
                 <div class="price dummyclass">
-                    <button id="${id}" class=""dummyclass>${serachInput.price}</button>
+                    <button id="${id}" class=""dummyclass>${search.price}</button>
                 </div>
                 </a>
                 </div>
