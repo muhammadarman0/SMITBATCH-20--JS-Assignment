@@ -5,6 +5,17 @@ let serachInput = document.getElementById("serachInput")
 let searhIcon = document.getElementById("searhIcon")
 
 const productCard = document.querySelector(".productCard")
+
+const reloader = document.querySelector(".loader")
+const reloadApp = () => {
+    setTimeout(() => {
+        reloader.style.display = "none"
+    }, 1000)
+    productCard.style.display = "flex"
+}
+
+
+
 function startApp() {
     let apiCall = fetch(`https://dummyjson.com/products?limit=10`)
 
@@ -18,18 +29,16 @@ function startApp() {
 
         let { products } = result
 
-        let { brand, category, title, description, price } = products
 
-        // console.log(brand);
         let returnHTML = products.map((items) => {
-            // console.log(items);
             let id = items.id;
             console.log(id);
-            productCard.innerHTML = `<h1>Loading App....</h1>`
+
+            
 
             return ` 
             <div class="apiCallingPr dummyclass" id=${id}>
-            <a  id="productCard" href="productDetails.html" target="_blank">
+            <a  class="productCard" href="productDetails.html" target="_blank">
                 <div id="${id}" class="imgPro">
                     <img id="${id}" class="dummyclass"
                         src=${items.images[0]}
@@ -44,12 +53,13 @@ function startApp() {
                     <p class="dummyclass" id="${id}">${items.description.slice(0, 20)}...</p>
                 </div>
                 <div class="price dummyclass">
-                    <button id="${id}" class=""dummyclass>${items.price}</button>
+                    <button id="${id}" class=""dummyclass">${items.price}</button>
                 </div>
                 </a>
                 </div>
             `
         })
+        reloadApp()
         setTimeout(() => {
             productCard.innerHTML = returnHTML.join(" ")
         }, 1000)
@@ -114,3 +124,4 @@ document.addEventListener("click", (e) => {
 
 
 searhIcon.addEventListener("click", serahEachProduct)
+
