@@ -1,4 +1,6 @@
 let scrollBox = document.getElementById("categoryScroll")
+console.log(scrollBox);
+
 let btnArrow = document.getElementById("scrollArrow")
 
 function scrollRight() {
@@ -7,14 +9,14 @@ function scrollRight() {
 }
 
 function updateScroll() {
-    let reveseContainer = scrollBox.scrollWidth - scrollBox.clientWidth;
-    if (scrollBox.scrollLeft >= reveseContainer - 5) {
-        btnArrow.style.opacity = "0";
-        btnArrow.style.pointerEvents = "none"
-    } else {
-        btnArrow.style.opacity = "1";
-        btnArrow.style.pointerEvents = "auto"
-    }
+    // let reveseContainer = scrollBox.scrollWidth - scrollBox.clientWidth;
+    // if (scrollBox.scrollLeft >= reveseContainer - 5) {
+    //     btnArrow.style.opacity = "0";
+    //     btnArrow.style.pointerEvents = "none"
+    // } else {
+    //     btnArrow.style.opacity = "1";
+    //     btnArrow.style.pointerEvents = "auto"
+    // }
 
 }
 scrollBox.addEventListener("scroll", updateScroll)
