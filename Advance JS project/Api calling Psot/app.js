@@ -19,11 +19,9 @@ const apiCall = async (e) => {
         let apiData = await fetch(`https://dummyjson.com/posts`)
         let response = await apiData.json()
         const { posts } = response
-        console.log(posts);
 
         const showUI = posts.map((post) => {
             let id = post.id
-            console.log(id);
 
             return `  
             <!-- JS -->
@@ -49,12 +47,24 @@ const apiCall = async (e) => {
 apiCall()
 // let getItem = JSON.parse(localStorage.getItem("id"))
 // console.log(getItem);
+let getId = JSON.parse(localStorage.getItem("id"))
+
+const showPostHTML = async (getId) => {
+    try {
+        let apiData = await fetch(`https://dummyjson.com/posts/${getId}`)
+        let resp = await apiData.json()
+        
+        
+    } catch (error) {
+
+    }
+}
 
 document.addEventListener("click", (e) => {
     let elem = e.target
     if (elem.classList.contains("dummy")) {
         localStorage.setItem("id", JSON.stringify(elem.id))
-        console.log("chal bhai");
+        showPostHTML(elem.id)
     }
 
 })
