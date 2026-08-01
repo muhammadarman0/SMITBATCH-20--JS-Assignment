@@ -1,11 +1,18 @@
 let searchInputVal = document.getElementById("searchInput")
+const navbar = document.querySelector(".navbar")
 const sideBar = document.querySelector(".sidebar")
 const searchBtn = document.getElementById("searchBtn")
 const loadApp = document.querySelector(".loader")
-
+const postList = document.getElementById("postList")
+const sidebar = document.querySelector(".sidebar")
+const postSection = document.querySelector(".post-section")
 // const reloadAPP = () => {
-//   let bo =  loadApp.style.display = "flex"
+// setTimeout(()=>{
+//     loadApp.style.display = "none"
+// })
+// cont.style.display = "flex"
 // }
+
 const apiCall = async (e) => {
     // reloadAPP()
     try {
@@ -29,6 +36,11 @@ const apiCall = async (e) => {
         })
         sideBar.innerHTML = showUI.join(" ")
     } catch (error) {
+        // postList.innerHTML = `<h1 style="color:red;">Not Connect!</h1>`
+        loadApp.style.display = "flex"
+        navbar.style.display = "none"
+        sidebar.style.display = "none"
+        postSection.style.display = "none"
         console.log(error);
 
     }

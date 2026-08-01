@@ -1,4 +1,4 @@
-let container = document.querySelector(".container")
+let container = document.querySelector(".container");
 console.log(container);
 
 let retryBtn = document.getElementById("retryBtn")
@@ -8,20 +8,19 @@ console.log(backToTop);
 let loader = document.getElementById("loader")
 
 const reloadApp = () => {
-        try {
-            loader.style.display = "none"
-        } catch (error) {
-            
-        }
-    
-}
-reloadApp()
+    setTimeout(() => {
+        loader.style.display = "none"
+    }, 1000);
 
-const movieApi = async()=>{
-  let apiCall = await fetch(`https://api.tvmaze.com/shows`)
-  let response = await apiCall.json()
-  console.log(response);
-  
+}
+
+
+const movieApi = async () => {
+    let apiCall = await fetch(`https://api.tvmaze.com/shows`)
+    let response = await apiCall.json()
+    console.log(response);
+    reloadApp()
+
 }
 
 movieApi()
@@ -34,7 +33,7 @@ const topScroll = () => {
 };
 
 const updateScroll = () => {
-console.log(window.scrollY);
+    console.log(window.scrollY);
 
     if (window.scrollY > 400) {
 

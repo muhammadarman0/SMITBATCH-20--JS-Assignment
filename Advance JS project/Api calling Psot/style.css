@@ -254,14 +254,17 @@ body {
 .loader {
     display: none;
     justify-content: center;
-    margin: 0 auto;
-    --main-color: #4387f4;
+    margin-top: 150px;
+    flex-direction: column;
+    /* margin-left: 700px; */
+    --main-color: #fd0000;
     transform: scale(1);
     /* You can change the size */
     z-index: 999;
 }
 
 .loader svg {
+    margin: 0 auto;
     width: 100px;
     height: 100px;
 }
