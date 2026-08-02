@@ -76,8 +76,8 @@ const searchHandler = async () => {
         </div>
 `
         })
-        sideBar.innerHTML = `<h1>Post Not Found</h1>`
         sideBar.innerHTML = showSearchHtml.join(" ")
+        sideBar.innerHTML = `<h1>Post Not Found</h1>`
     } catch (error) {
         console.log(error);
 
