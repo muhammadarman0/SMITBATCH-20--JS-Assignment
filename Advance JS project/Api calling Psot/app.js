@@ -9,6 +9,7 @@ const postSection = document.querySelector(".post-section")
 const postTitle = document.querySelector(".post-title")
 const postBody = document.querySelector(".post-body")
 const searchInput = document.getElementById("searchInput")
+const loadersApp = document.querySelector(".loaders")
 // const reloadAPP = () => {
 // setTimeout(()=>{
 //     loadApp.style.display = "none"
@@ -18,6 +19,7 @@ const searchInput = document.getElementById("searchInput")
 
 const apiCall = async (e) => {
     // reloadAPP()
+    loadersApp.style.display = "flex"
     try {
         let apiData = await fetch(`https://dummyjson.com/posts`)
         let response = await apiData.json()
@@ -43,6 +45,8 @@ const apiCall = async (e) => {
         postSection.style.display = "none"
         console.log(error);
 
+    } finally {
+        loadersApp.style.display = "none"
     }
 }
 
@@ -52,11 +56,23 @@ apiCall()
 let getId = JSON.parse(localStorage.getItem("id"))
 
 const searchHandler = async () => {
+    loadersApp.style.display = "flex"
     try {
         let value = searchInput.value
         let searchApi = await fetch(`https://dummyjson.com/posts/search?q=${value}`)
         let resp = await searchApi.json()
         const { posts } = resp
+        if (posts.length === 0) {
+
+            sideBar.innerHTML = `
+        <h2 style="text-align:center;margin-top:40px">
+            Post Not Found
+        </h2>
+    `;
+
+            return;
+
+        }
         if (value.trim() === "") {
             alert("Search Each post")
             return
@@ -75,16 +91,25 @@ const searchHandler = async () => {
                    <p class="dummy"  id="${id}"> ${search.body.slice(0, 140)}</p>
         </div>
 `
+
         })
-        sideBar.innerHTML = showSearchHtml.join(" ")
-        sideBar.innerHTML = `<h1>Post Not Found</h1>`
+        console.log(showSearchHtml);
+
+
+        sideBar.innerHTML = showSearchHtml.join("")
     } catch (error) {
+        sideBar.innerHTML = `<h1>Post Not Found</h1>`
         console.log(error);
 
+    } finally {
+        loadersApp.style.display = "none"
     }
+
 }
 
 const showPostHTML = async (getId) => {
+    loadersApp.style.display = "flex"
+
     try {
         let apiData = await fetch(`https://dummyjson.com/posts/${getId}`)
         let resp = await apiData.json()
@@ -95,6 +120,8 @@ const showPostHTML = async (getId) => {
     } catch (error) {
         loadApp.style.display = "flex"
 
+    } finally {
+        loadersApp.style.display = "none"
     }
 }
 
