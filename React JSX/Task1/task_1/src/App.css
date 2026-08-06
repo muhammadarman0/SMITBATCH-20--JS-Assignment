@@ -28,15 +28,18 @@ body {
   list-style: none;
   gap: 20px;
 }
-
+.contacts>ul>li{
+  font-weight: bold;
+}
 .contacts>ul>li:hover {
-  color: white;
+  text-decoration:underline white;
   cursor: pointer;
 }
 
 .card {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
@@ -55,8 +58,11 @@ body {
   margin: auto;
   border-radius: 20px;
   object-fit: contain;
+  transform: scale(1);
 }
-
+.course>img:hover{
+  transition: all 1.2s;
+}
 .inf_course>h3 {
   text-align: center;
   text-decoration: underline rebeccapurple;
