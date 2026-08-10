@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = (data) => {
     
-    let liList = ["Home", "About", "Contact"]
+    let liList = ["Home", "About", "Contact","Profolio"]
 
 
     return (

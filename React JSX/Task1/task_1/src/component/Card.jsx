@@ -19,7 +19,7 @@ const Card = () => {
                 {
                     arrObj.map((data) => (
                         <>
-                            <div className="course">
+                            <div className="course" data-aos="flip-up">
 
                                 <img src={data.img} alt="" srcset="" width={200} height={200} />
                                 <div className="inf_course">
