@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Navbar from './component/Navbar'
 import Sidebar from './component/SideBar'
+import RecipeDetail from './component/RecipeDetail'
 
-export const App = () => {
+const App = () => {
+  const [selectRecipe, setSelectRecipe] = useState(null)
   return (
     <>
       <Navbar />
-<Sidebar />
+      <div className="layout">
+        <Sidebar setSelectRecipe={setSelectRecipe} />
+        <RecipeDetail recipe={selectRecipe} />
+      </div>
     </>
   )
 }

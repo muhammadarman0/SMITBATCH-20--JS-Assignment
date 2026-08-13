@@ -1,8 +1,8 @@
-import js from "@eslint/js";
+// import js from "@eslint/js";
 import React, { useEffect, useState } from "react";
 // import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ setSelectRecipe }) => {
 
     // const menuItems = [
     //     {
@@ -94,32 +94,29 @@ const Sidebar = () => {
 
                     {recipes.map((recipe) => {
                         let id = recipe.id;
-                        console.log(id);
 
                         return (
-                            <div onClick={() => { localStorage.setItem("Id", JSON.stringify(id)) }}
+                            <div onClick={() => { setSelectRecipe(recipe) }}
                                 className="recipeItem"
                                 key={recipe.id}
                             >
 
-                                <img onClick={() => { localStorage.setItem("Id", JSON.stringify(id)) }}
+                                <img
                                     src={recipe.image}
                                     alt={recipe.name}
                                 />
 
-                                <div onClick={() => { localStorage.setItem("Id", JSON.stringify(id)) }} className="recipeInfo">
+                                <div className="recipeInfo">
 
-                                    <h3 onClick={() => {
-                                        localStorage.setItem("Id", JSON.stringify(id))
-                                    }}>{recipe.name}</h3>
+                                    <h3>{recipe.name}</h3>
 
-                                    <p onClick={() => { localStorage.setItem("Id", JSON.stringify(id)) }}>
+                                    <p>
                                         {recipe.cuisine}
                                     </p>
 
                                 </div>
 
-                                <span onClick={() => { localStorage.setItem("Id", JSON.stringify(id)) }} className="arrow">
+                                <span className="arrow">
                                     →
                                 </span>
 
