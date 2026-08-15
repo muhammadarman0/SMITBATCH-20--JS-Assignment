@@ -4,9 +4,10 @@ const Navbar = ({ setSearch }) => {
   const [searchVal, setSearchVal] = useState("")
   const handler = () => {
     setSearch(searchVal)
-    // if(searchVal){
-    //   alert("Search Any Recipes")
-    // }
+    if(searchVal === ""){
+      alert("Search Any Recipes")
+      return
+    }
   }
   return (
     <nav className="navbar">

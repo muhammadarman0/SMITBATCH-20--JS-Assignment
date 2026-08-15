@@ -5,10 +5,14 @@ import Handler from './Handler'
 const Form = ({ firstName, lastName, img, rollNum, setFirstName, setLastName, setImg, setRollNum, setShowCard, card }) => {
     const generatePassword = () => {
         const pass = Math.floor(Math.random() * 9000) + 1000
+        if (firstName === "" || lastName === "" || !img) {
+            alert("Fill yout fireld")
+            return
+        }
         setRollNum(pass)
         setShowCard(true)
-
     }
+
     return (
         <div className="student-container">
 
@@ -28,7 +32,7 @@ const Form = ({ firstName, lastName, img, rollNum, setFirstName, setLastName, se
 
                 <div className="input-group">
                     <label>Student Image</label>
-                    <input type="file" accept="image/*" onChange={(e) => setImg(e.target.src)} />
+                    <input type="file" accept="image/*" onChange={(e) => setImg(e.target.files[0])} />
                 </div>
 
                 <div className="input-group">
@@ -40,7 +44,7 @@ const Form = ({ firstName, lastName, img, rollNum, setFirstName, setLastName, se
                     />
                 </div>
 
-                <Handler title = {generatePassword} />
+                <Handler title={generatePassword} />
 
             </div>
 

@@ -4,7 +4,7 @@ import Handler from './Handler'
 const ShowCard = ({ firstName, lastName, img, rollNum }) => {
     return (
         <>
-            <h1>Student ID Card</h1>
+            {/* <h1>Student ID Card</h1> */}
 
             {/* <Form /> */}
 
