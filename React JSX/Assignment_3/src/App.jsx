@@ -6,11 +6,13 @@ import RecipeDetail from './component/RecipeDetail'
 
 const App = () => {
   const [selectRecipe, setSelectRecipe] = useState(null)
+
+  const [search, setSearch] = useState("")
   return (
     <>
-      <Navbar />
+      <Navbar setSearch={setSearch} />
       <div className="layout">
-        <Sidebar setSelectRecipe={setSelectRecipe} />
+        <Sidebar setSelectRecipe={setSelectRecipe} search={search} />
         <RecipeDetail recipe={selectRecipe} />
       </div>
     </>

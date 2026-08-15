@@ -2,66 +2,39 @@
 import React, { useEffect, useState } from "react";
 // import "./Sidebar.css";
 
-const Sidebar = ({ setSelectRecipe }) => {
-
-    // const menuItems = [
-    //     {
-    //         id: 1,
-    //         icon: "🍔",
-    //         name: "Burgers"
-    //     },
-    //     {
-    //         id: 2,
-    //         icon: "🍕",
-    //         name: "Pizza"
-    //     },
-    //     {
-    //         id: 3,
-    //         icon: "🍗",
-    //         name: "Chicken"
-    //     },
-    //     {
-    //         id: 4,
-    //         icon: "🍝",
-    //         name: "Pasta"
-    //     },
-    //     {
-    //         id: 5,
-    //         icon: "🥗",
-    //         name: "Salads"
-    //     },
-    //     {
-    //         id: 6,
-    //         icon: "🍰",
-    //         name: "Desserts"
-    //     },
-    //     {
-    //         id: 7,
-    //         icon: "🥤",
-    //         name: "Drinks"
-    //     },
-    //     {
-    //         id: 8,
-    //         icon: "☕",
-    //         name: "Coffee"
-    //     }
-    // ];
+const Sidebar = React.memo(({ setSelectRecipe, search = "" }) => {
 
     let [recipes, setRecipe] = useState([])
 
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         const getRecipe = async () => {
-            let apiRecipe = await fetch(`http://dummyjson.com/recipes`)
-            let data = await apiRecipe.json();
+            try {
+                let apiRecipe = await fetch(`http://dummyjson.com/recipes`)
+                let data = await apiRecipe.json();
 
-            setRecipe(data.recipes)
+                setRecipe(data.recipes)
+
+            } catch (error) {
+                console.log(error);
+
+            } finally {
+                setLoading(false)
+            }
         }
         getRecipe()
     }, [])
+    const filteredRecipes = recipes.filter((recipe) =>
+        recipe.name
+            .toLowerCase()
+            .includes(search.toLowerCase())
+    );
+
 
     return (
         <>
-            {console.log(recipes)}
+            {/* {console.log(setRecipe(recipes))} */}
             <aside className="sidebar">
 
                 {/* Restaurant Header */}
@@ -91,14 +64,25 @@ const Sidebar = ({ setSelectRecipe }) => {
                 {/* Recipe List */}
 
                 <div className="recipeList">
+                    {/* Loader */}
 
-                    {recipes.map((recipe) => {
+                    {loading &&(
+                        <div className="loaderContainer">
+                            <div className="loader"></div>
+                            <p>Loading menu...</p>
+                        </div>
+                    )}
+
+                    {filteredRecipes.map((recipe) => {
                         let id = recipe.id;
 
+
                         return (
-                            <div onClick={() => { setSelectRecipe(recipe) }}
+                            <div
                                 className="recipeItem"
-                                key={recipe.id}
+                                key={id}
+                                onClick={() => console.log(setSelectRecipe(recipe))
+                                }
                             >
 
                                 <img
@@ -122,13 +106,14 @@ const Sidebar = ({ setSelectRecipe }) => {
 
                             </div>)
 
-                    })}
+                    })
+                    }
 
                 </div>
 
-            </aside>
+            </aside >
         </>
     );
-};
+})
 
 export default Sidebar;

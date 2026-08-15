@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Weblogo from "../assets/react.svg"
-const Navbar = () => {
+const Navbar = ({ setSearch }) => {
+  const [searchVal, setSearchVal] = useState("")
+  const handler = () => {
+    setSearch(searchVal)
+    // if(searchVal){
+    //   alert("Search Any Recipes")
+    // }
+  }
   return (
     <nav className="navbar">
 
@@ -11,11 +18,12 @@ const Navbar = () => {
 
       <div className="searchBox">
         <input
+          onChange={(e) => setSearch(e.target.value)}
           type="text"
           placeholder="Search your style..."
         />
 
-        <button>
+        <button onClick={(e) => setSearchVal(handler)}>
           Search
         </button>
       </div>
