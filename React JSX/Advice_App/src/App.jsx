@@ -3,7 +3,11 @@ import React, { useState } from 'react'
 import './App.css'
 
 let advices = [
-  "Learn HTML", "Learn React", "Regular Apply kero",
+  "Believe in yourself and keep learning.",
+  "Practice every day, even if you learn something small.",
+  "Don't compare your journey with others.",
+  "Mistakes are part of learning.",
+  "Stay consistent and keep moving forward.",
 ]
 
 
@@ -60,6 +64,17 @@ const App = React.memo(() => {
             <li className={`${step == 3 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
               3
             </li>
+            <li className={`${step == 4 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
+              4
+            </li>
+
+            <div className="w-12 h-1 bg-white/40 rounded-full"></div>
+
+            <li className={`${step == 5 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
+              5
+            </li>
+
+
 
           </ul>
 
@@ -90,21 +105,21 @@ const App = React.memo(() => {
           {/* Buttons */}
           <div className="relative flex justify-between items-center mt-8">
 
-            <button onClick={() => step != 3 ? setStep(step + 1) : setStep(1)} className="group px-6 py-3 rounded-xl bg-white/20 border border-white/30 text-white font-bold backdrop-blur-md hover:bg-white hover:text-purple-600 hover:scale-105 transition-all duration-300">
+            <button onClick={() => step != 5 ? setStep(step + 1) : setStep(1)} className="group px-6 py-3 rounded-xl bg-white/20 border border-white/30 text-white font-bold backdrop-blur-md hover:bg-white hover:text-purple-600 hover:scale-105 transition-all duration-300">
               <span className="group-hover:-translate-x-1 inline-block transition">
-                ←
+                →
               </span>
 
-              {" "}Previous
+              {" "}Next
             </button>
 
 
-            <button onClick={() => step > 1 ? setStep(step - 1) : setStep(3)} className="group px-7 py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold shadow-lg shadow-orange-500/30 hover:scale-105 hover:shadow-orange-500/50 transition-all duration-300">
+            <button onClick={() => step > 1 ? setStep(step - 1) : setStep(5)} className="group px-7 py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold shadow-lg shadow-orange-500/30 hover:scale-105 hover:shadow-orange-500/50 transition-all duration-300">
 
-              Next{" "}
+              Previous{" "}
 
               <span className="group-hover:translate-x-1 inline-block transition">
-                →
+                ←
               </span>
 
             </button>
