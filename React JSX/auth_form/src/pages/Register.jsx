@@ -3,7 +3,6 @@ import Input from "../component/Input";
 import Btn from "../component/Btn";
 
 const Register = () => {
-
     const [Form, setForm] = useState({
         email: "",
         password: "",
@@ -39,7 +38,9 @@ const Register = () => {
                 </p>
 
                 <div className="space-y-4">
-
+                    {/* <h1 className="mb-2 text-center text-3xl font-bold text-white">
+                        TEST REGISTER
+                    </h1> */}
                     <Input
                         placeholder="Enter your Name"
                         head="Name"
