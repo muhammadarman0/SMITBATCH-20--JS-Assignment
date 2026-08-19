@@ -49,28 +49,28 @@ const App = React.memo(() => {
           {/* Steps */}
           <ul className="relative flex justify-center items-center gap-5 mb-10">
 
-            <li onClick={()=> setStep(1)} className={`${step == 1 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
+            <li onClick={() => setStep(1)} className={`${step == 1 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
               1
             </li>
 
             <div className="w-12 h-1 bg-white/40 rounded-full"></div>
 
-            <li onClick={()=> setStep(2)} className={`${step == 2 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
+            <li onClick={() => setStep(2)} className={`${step == 2 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
               2
             </li>
 
             <div className="w-12 h-1 bg-white/40 rounded-full"></div>
 
-            <li onClick={()=> setStep(3)} className={`${step == 3 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
+            <li onClick={() => setStep(3)} className={`${step == 3 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
               3
             </li>
-            <li onClick={()=> setStep(4)} className={`${step == 4 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
+            <li onClick={() => setStep(4)} className={`${step == 4 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
               4
             </li>
 
             <div className="w-12 h-1 bg-white/40 rounded-full"></div>
 
-            <li onClick={()=> setStep(5)} className={`${step == 5 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
+            <li onClick={() => setStep(5)} className={`${step == 5 ? "bg-gradient-to-br from-yellow-400 to-orange-500 text-white" : " bg-white/20 border border-white/40 text-white"} w-14 h-14 rounded-full text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-orange-500/40 hover:scale-110 transition duration-300 cursor-pointer`}>
               5
             </li>
 
@@ -105,21 +105,21 @@ const App = React.memo(() => {
           {/* Buttons */}
           <div className="relative flex justify-between items-center mt-8">
 
-            <button onClick={() => step != 5 ? setStep(step + 1) : setStep(1)} className="group px-6 py-3 rounded-xl bg-white/20 border border-white/30 text-white font-bold backdrop-blur-md hover:bg-white hover:text-purple-600 hover:scale-105 transition-all duration-300">
+            <button onClick={() => step > 1 ? setStep(step - 1) : setStep(5)} className="group px-6 py-3 rounded-xl bg-white/20 border border-white/30 text-white font-bold backdrop-blur-md hover:bg-white hover:text-purple-600 hover:scale-105 transition-all duration-300">
               <span className="group-hover:-translate-x-1 inline-block transition">
-                →
+                ←
               </span>
 
-              {" "}Next
+              Previous{" "}
             </button>
 
 
-            <button onClick={() => step > 1 ? setStep(step - 1) : setStep(5)} className="group px-7 py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold shadow-lg shadow-orange-500/30 hover:scale-105 hover:shadow-orange-500/50 transition-all duration-300">
+            <button onClick={() => step != 5 ? setStep(step + 1) : setStep(1)} className="group px-7 py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold shadow-lg shadow-orange-500/30 hover:scale-105 hover:shadow-orange-500/50 transition-all duration-300">
 
-              Previous{" "}
+              {" "}Next
 
               <span className="group-hover:translate-x-1 inline-block transition">
-                ←
+                →
               </span>
 
             </button>
