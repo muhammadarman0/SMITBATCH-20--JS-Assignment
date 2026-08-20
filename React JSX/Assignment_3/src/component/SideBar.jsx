@@ -1,4 +1,5 @@
 // import js from "@eslint/js";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 // import "./Sidebar.css";
 
@@ -11,10 +12,10 @@ const Sidebar = React.memo(({ setSelectRecipe, search = "" }) => {
     useEffect(() => {
         const getRecipe = async () => {
             try {
-                let apiRecipe = await fetch(`http://dummyjson.com/recipes`)
-                let data = await apiRecipe.json();
+                let data = await axios.get(`http://dummyjson.com/recipes`)
+                // let data = await apiRecipe.json();
 
-                setRecipe(data.recipes)
+                setRecipe(data.data.recipes)
 
             } catch (error) {
                 console.log(error);
